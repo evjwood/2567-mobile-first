@@ -8,12 +8,8 @@
 	1.1 - Headings
 	1.2 - Body Copy
 	1.3 - Buttons
-	1.4 - Forms
-	1.5 - Lists
+	1.4 - Lists
 2.0 - Navigation Menus
-	3.1 - Main Menu
-	3.2 - Sub Menu
-	3.3 - Footer Menu
 3.0 - Content
 	3.1 - Site Structure (Site Header, Advertisement, Site Footer)
 	3.2 - Section Name
@@ -33,8 +29,8 @@
 body {
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	-webkit-font-smoothing: antialiased;
-	color: #1b2026;
 	background-color: #eee;
+	letter-spacing: .025rem;
 }
 
 #hero p, h2, #works h4, footer p, #hero a, footer a:hover {
@@ -47,6 +43,10 @@ body {
 
 body, #hero a:hover, footer a, header nav a:hover, footer a {
 	color: #1b2026;
+}
+
+#team h4 {
+	color: #3a4750;
 }
 
 h1, h2, h3, #works h4, .col-1-4 p, header p, #team header .col-2-3 p, .col-2-3 {
@@ -69,7 +69,7 @@ h3, #team h4 {
 	font-weight: 400;
 }
 
-header nav a, footer li {
+header nav a, footer li, b {
 	font-weight: 700;
 }
 
@@ -79,15 +79,17 @@ header nav a, footer li {
 h2 {
 	font-size: 3rem;
 	margin:30px 0 5px;
+	letter-spacing: .15rem;
+	line-height: 3.33rem;
 }
 
 h3 {
 	font-size: 2.25rem;
-	margin: 75px 0 25px;	
+	margin: 70px 0 25px;
 }
 
 h4 {
-	font-size: 1.5rem;
+	font-size: 1.66rem;
 }
 
 /*--1.2 BODY COPY--*/
@@ -107,7 +109,8 @@ p {
 }
 
 #team header .col-2-3 p {
-    margin-bottom: 50px;
+    margin: 30px 0 60px;
+	
 }
 
 footer p, footer a {
@@ -125,36 +128,31 @@ a {
 	font-size: 1.25rem;
 	border: 3px solid #eee;
 	padding: 7px 30px;
-	background-color: #1b2026;
+	-ms-border-radius: 10px;
+	-mz-border-radius: 10px;
+	-o-border-radius: 10px;
+	-webkit-border-radius: 10px;
 	border-radius: 10px;
+
 	margin: 10px;
 }
 
-#hero a:hover {
-	background-color: #00adb5;
-}
-
-footer ul {
-	margin-top: 30px;
-}
 
 footer a {
 	margin-right: 40px;
 }
 
-/*--1.5 LISTS--*/
-
-ul {
-	padding-left: 0;
+footer li:last-child a {
+	margin-right: 0;
 }
-
-/*--------------------------------------------------------------
-2.0 - NAVIGATION MENUS
--------------------------------------------------------------- */
 
 header nav a {
 	padding: 7px 25px;
 	border: 2px solid #eee;
+	-ms-border-radius: 20px;
+	-mz-border-radius: 20px;
+	-o-border-radius: 20px;
+	-webkit-border-radius: 20px;
 	border-radius: 20px;
     margin: 18px 6px 0 0;
 }
@@ -163,61 +161,19 @@ header nav a:hover {
 	background-color: #eee;
 }
 
+/*--1.4 LISTS--*/
+
+ul {
+	padding-left: 0;
+}
+
+footer ul {
+	margin-top: 30px;
+}
+
 /*--------------------------------------------------------------
 3.0 - CONTENT
 -------------------------------------------------------------- */
-
-#team img {
-	border-radius: 15px;
-	width: 100%;
-}
-
-/*--------------------------------------------------------------
-4.0 - MEDIA
--------------------------------------------------------------- */
-
-#hero {
-	background: url(../img/img-hero.jpg) no-repeat center center;
-    background-size: cover;
-}
-
-.icon-fb {
-	background: url(../img/icon-fb.png) no-repeat;
-}
-
-.icon-twitter {
-	background: url(../img/icon-twitter.png) no-repeat;
-	margin-left: 15px;
-}
-
-.icon-fb, .icon-twitter {
-	height: 40px;
-    width: 40px;
-    background-position: 0 0;
-	float: left;
-}
-
-.icon-fb:hover, .icon-twitter:hover {
-	background-position: 0 -40px;
-}
-
-/*--------------------------------------------------------------
-5.0 - UTILITY
--------------------------------------------------------------- */
-
-/*--5.1 - Background Colors--*/
-
-.bg-dark {
-	background-color: #1b2026;
-	position: relative;
-}
-
-.bg-bright {
-	background-color: #00adb5;
-	margin-top: 20px;
-}
-
-/*-- 5.4 - Alignments --*/
 
 .wrapper {
 	margin: 0 auto;
@@ -235,14 +191,28 @@ header nav a:hover {
 	}
 	.flex [class*='col-'] {
 	flex: 1;
+		
 	}
+	
+	#hero p, #hero a {
+		font-size: 1.33rem;
+	}
+	
+	h2 {
+		font-size: 3.33rem;
+	}
+	
+	p {
+		font-size: 1.2rem;
+	}
+	
 }
 
 header nav a, #hero a, footer li, li, footer li, .icon-fb, .icon-twitter {
 	display: inline-block;
 }
 
-#hero p {
+#hero p, #team p {
 	margin-top: 0;
 }
 
@@ -259,11 +229,14 @@ h4 {
 }
 
 #hero .col-2-3 {
-	padding: 90px 0 130px;
+	padding: 90px 0 110px;
 }
 
 .box-blue{
-	background-color: #1b2026;
+	-ms-border-radius: 15px;
+	-mz-border-radius: 15px;
+	-o-border-radius: 15px;
+	-webkit-border-radius: 15px;
 	border-radius: 15px;
 	padding: 15px;
 	height: 100%;
@@ -279,13 +252,6 @@ h4 {
 
 #team .col-2-3 {
 	padding-left: 15px;
-}
-
-.rule {
-	margin: 2px auto;
-	width: 66%;
-	height: 3px;
-	background-color: #3a4750;
 }
 
 .f-left, .icon-fb, .icon-twitter, [class*='col-'] {
@@ -433,16 +399,6 @@ h4 {
 	width: 58.33%;
 }
 
-.red {
-	background-color: #EA5455;
-	height: 100px;
-}
-
-.tan {
-	background-color: #FDE9C9;	
-	height: 75px;
-}
-
 [class*='col-']:last-of-type {
 	padding-right: 0px;
 }
@@ -493,11 +449,11 @@ h4 {
 	padding: 25px 0;
 }
 	
-	nav ul {
+	nav ul, footer p {
 		text-align: center;
 	}
 	
-	footer ul {
+	footer ul, header nav a {
 		margin-top: 0;
 	}
 	
@@ -506,7 +462,6 @@ h4 {
 	}
 	
 	footer p{
-		text-align: center;
 		padding-top: 15px;
 	}
 	
@@ -522,9 +477,16 @@ h4 {
 		margin: 25px 0 10px;
 	}
 	
-	
 	.col-1-4 {
 		padding-right: 0;
+	}
+	
+	#hero a {
+		margin-bottom: 40px;
+	}
+	
+	footer li {
+		margin-bottom: 15px;
 	}
 }
 
@@ -536,3 +498,72 @@ h4 {
 	}
 }
 */ 
+
+.rule {
+	margin: 2px auto;
+	width: 66%;
+	height: 3px;
+}
+
+.bg-bright {
+	margin-top: 20px;
+}
+
+/*--------------------------------------------------------------
+4.0 - MEDIA
+-------------------------------------------------------------- */
+
+#hero {
+	background: url(../img/img-hero.jpg) no-repeat center center;
+    background-size: cover;
+}
+
+.icon-fb {
+	background: url(../img/icon-fb.png) no-repeat;
+}
+
+.icon-twitter {
+	background: url(../img/icon-twitter.png) no-repeat;
+	margin-left: 10px;
+}
+
+#team img {
+	border-radius: 15px;
+	-ms-border-radius: 15px;
+	-mz-border-radius: 15px;
+	-o-border-radius: 15px;
+	-webkit-border-radius: 15px;
+	width: 100%;
+}
+
+.icon-fb, .icon-twitter {
+	height: 40px;
+    width: 40px;
+    background-position: 0 0;
+}
+
+.icon-fb:hover, .icon-twitter:hover {
+	background-position: 0 -40px;
+}
+/*--------------------------------------------------------------
+5.0 - UTILITY
+-------------------------------------------------------------- */
+
+/*--5.1 - Background Colors--*/
+
+.bg-dark, .box-blue, #hero a {
+	background-color: #1b2026;
+}
+
+.bg-bright, #hero a:hover {
+	background-color: #00adb5;
+}
+
+.rule {
+	background-color: #3a4750;
+}
+
+
+
+/*-- 5.4 - Alignments --*/
+
