@@ -10,7 +10,6 @@
 	1.3 - Buttons
 	1.4 - Forms
 	1.5 - Lists
-	1.6 - Tables
 2.0 - Navigation Menus
 	3.1 - Main Menu
 	3.2 - Sub Menu
@@ -38,49 +37,64 @@ body {
 	background-color: #eee;
 }
 
-/*--1.1 HEADINGS--*/
-h1, h2, h3, #works h4 {
-	text-align: center;
-}
-
-h2 {
-	color: #eee;
-	font-size: 3rem;
-	margin:30px 0;
-}
-
-h3 {
-	font-size: 2.5rem;
-	font-weight: 200;
-	margin-bottom: 0;
-}
-
-#works h4 {
+#hero p, h2, #works h4, footer p, #hero a, footer a:hover {
 	color:#eee;
 }
 
-h4 {
-	font-size: 1.75rem;
-	margin: 0;
+.col-1-4 p, header nav a {
+	color: #00adb5;	
 }
 
-#team h4 {
-	font-weight: 200;
+body, #hero a:hover, footer a, header nav a:hover, footer a {
+	color: #1b2026;
+}
+
+h1, h2, h3, #works h4, .col-1-4 p, header p, #team header .col-2-3 p, .col-2-3 {
+	text-align: center;
+}
+
+#team h4, #team .col-2-3 p {
 	text-align: left;
 }
+
+footer li {
+	text-align: right;
+}
+
+h3, #team h4 {
+	font-weight: 200;
+}
+
+#hero a {
+	font-weight: 400;
+}
+
+header nav a, footer li {
+	font-weight: 700;
+}
+
+
+/*--1.1 HEADINGS--*/
+
+h2 {
+	font-size: 3rem;
+	margin:30px 0 5px;
+}
+
+h3 {
+	font-size: 2.25rem;
+	margin: 75px 0 25px;	
+}
+
+h4 {
+	font-size: 1.5rem;
+}
+
 /*--1.2 BODY COPY--*/
 
 #hero p {
-	color: #eee;
     font-size: 1.25rem;
     line-height: 1.75rem;
-	margin-top: 0;
-}
-
-.col-1-4 p {
-	color: #00adb5;
-	text-align: center;
-	
 }
 
 p {
@@ -88,13 +102,16 @@ p {
 	line-height: 1.5rem;
 }
 
-header p {
-	text-align: center;
+#team .col-2-3 p {
+	margin-bottom: 10px;
 }
 
-#team .col-2-3 p {
-	text-align: left;
-	margin-top: 0;
+#team header .col-2-3 p {
+    margin-bottom: 50px;
+}
+
+footer p, footer a {
+	font-size: 1rem;
 }
 
 /*--1.3 BUTTONS--*/
@@ -103,66 +120,48 @@ a {
 	text-decoration: none;	
 }
 
-nav a {
-	color: #00ADB5;
-	padding: 7px 25px;
-	border: 2px solid #eee;
-	border-radius: 20px;
-	font-weight: bold;
-
-}
-
-nav a:hover {
-	background-color: #eee;
-	color: #1b2026;
-}
 
 #hero a {
 	font-size: 1.25rem;
-	color: #eee;
 	border: 3px solid #eee;
 	padding: 7px 30px;
 	background-color: #1b2026;
 	border-radius: 10px;
-	font-weight: 400;
 	margin: 10px;
 }
 
 #hero a:hover {
 	background-color: #00adb5;
-	color: #1b2026;
+}
+
+footer ul {
+	margin-top: 30px;
 }
 
 footer a {
-	color: #1b2026;
-	
+	margin-right: 40px;
 }
-
-footer a:hover {
-	color: #eee;
-}
-/*--1.4 FORMS--*/
 
 /*--1.5 LISTS--*/
 
 ul {
-	float:right;
+	padding-left: 0;
 }
-
-
-footer li {
-	display: block;
-	text-align: right;
-	font-weight: 700;
-}
-
-
-
-/*--1.6 TABLES--*/
 
 /*--------------------------------------------------------------
 2.0 - NAVIGATION MENUS
 -------------------------------------------------------------- */
+
+header nav a {
+	padding: 7px 25px;
+	border: 2px solid #eee;
+	border-radius: 20px;
+    margin: 18px 6px 0 0;
+}
+
+header nav a:hover {
+	background-color: #eee;
+}
 
 /*--------------------------------------------------------------
 3.0 - CONTENT
@@ -172,7 +171,6 @@ footer li {
 	border-radius: 15px;
 	width: 100%;
 }
-
 
 /*--------------------------------------------------------------
 4.0 - MEDIA
@@ -189,13 +187,14 @@ footer li {
 
 .icon-twitter {
 	background: url(../img/icon-twitter.png) no-repeat;
+	margin-left: 15px;
 }
 
 .icon-fb, .icon-twitter {
 	height: 40px;
     width: 40px;
     background-position: 0 0;
-	display: inline-block;
+	float: left;
 }
 
 .icon-fb:hover, .icon-twitter:hover {
@@ -215,25 +214,60 @@ footer li {
 
 .bg-bright {
 	background-color: #00adb5;
+	margin-top: 20px;
 }
 
 /*-- 5.4 - Alignments --*/
 
+.wrapper {
+	margin: 0 auto;
+	width: 70%;	
+}
+
+@media (min-width: 480px) { 
+	.flex {
+		display: -webkit-flex;
+		display: -mz-flex;
+		display: -o-flex;
+		display: -ms-flex;
+		display: flex;
+		overflow: hidden;
+	}
+	.flex [class*='col-'] {
+	flex: 1;
+	}
+}
+
+header nav a, #hero a, footer li, li, footer li, .icon-fb, .icon-twitter {
+	display: inline-block;
+}
+
+#hero p {
+	margin-top: 0;
+}
+
+h4 {
+	margin: 0;
+}
+
+.block-center {
+	margin: auto;
+}
+
 .col-2-3 {
-  	margin:0 auto;
-  	text-align: center;
+  	margin: 0 auto;
 }
 
 #hero .col-2-3 {
-	padding: 90px 0;
+	padding: 90px 0 130px;
 }
 
 .box-blue{
 	background-color: #1b2026;
 	border-radius: 15px;
 	padding: 15px;
+	height: 100%;
 }
-
 
 *, *:after, *:before {
 	-moz-box-sizing: border-box;
@@ -243,19 +277,28 @@ footer li {
 	box-sizing: border-box;
 }	
 
-li {
-	display: inline-block;	
-}
-
-.wrapper {
-	margin: 0 auto;
-	width: 70%;	
-}
-
 #team .col-2-3 {
 	padding-left: 15px;
 }
 
+.rule {
+	margin: 2px auto;
+	width: 66%;
+	height: 3px;
+	background-color: #3a4750;
+}
+
+.f-left, .icon-fb, .icon-twitter, [class*='col-'] {
+	float: left;
+}
+
+.f-right {
+	float: right;
+}
+
+.block-center {
+    float: none;
+}
 
 /*-- Responsive code --*/
 
@@ -263,18 +306,17 @@ li {
 	content: "";
 	display: table;
 	clear: both;	
-}	
+}
+
+.row {
+	overflow: auto;
+}
 
 [class*='col-'] {
-	float: left;	
 	padding-right: 15px;
 	margin-bottom: 15px;
 }
 
-.block-center {
-	margin: auto;
-    float: none;
-}
 .col-1-1 {
 	width: 100%;
 }
@@ -411,6 +453,10 @@ li {
 		width: 90%;	
 	}
 	
+	.col-2-3.col-sm {
+		width: 66.66%;
+	}
+	
 	.col-1-4, .col-1-10, .col-5-12, .col-1-2, .col-5-6 {
 		width: 100%;
 	}
@@ -446,6 +492,40 @@ li {
 	#hero .col-2-3 {
 	padding: 25px 0;
 }
+	
+	nav ul {
+		text-align: center;
+	}
+	
+	footer ul {
+		margin-top: 0;
+	}
+	
+	.f-right, .f-left {
+		float: none;
+	}
+	
+	footer p{
+		text-align: center;
+		padding-top: 15px;
+	}
+	
+	header li {
+		margin: 0 4px;
+	}
+	
+	footer a {
+		margin: 0 15px;
+	}
+	
+	h3 {
+		margin: 25px 0 10px;
+	}
+	
+	
+	.col-1-4 {
+		padding-right: 0;
+	}
 }
 
 
